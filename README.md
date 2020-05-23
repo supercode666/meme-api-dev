@@ -1,7 +1,9 @@
 # meme-api-dev
-## Attention
+## Quick Info
 
-* **/meme/extra/meme.sql** is just a reference for db checking
+* each REST API request has Bad Request handler
+* Assumptions : there will be no new update on http://interview.funplay8.com/index.php therefore no checking is done here
+	- if there were updates, CRON JOBS could have been implemented here
 
 ---
 
@@ -75,4 +77,7 @@
 * View the results here : http://iothost.xyz/meme/index.php?page=95 
 * The design is just a mock up for testing and presenting purposes.
 
+---
+## Attention
 
+* **/meme/extra/meme.sql** is just a reference for db checking
