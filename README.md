@@ -29,7 +29,7 @@ This is a version 1 of the Corona Virus Tracker for Specific country that will a
 
 * Change the ssid and password to your wifi or hotspots ssid and password :
 ```
-http://iothost.xyz/meme/all                                            
+[http://iothost.xyz/meme/all]                                           
 ```
 
 #### 2. Country Name
