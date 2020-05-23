@@ -27,8 +27,9 @@ This is a version 1 of the Corona Virus Tracker for Specific country that will a
 ### Usage
 #### 1. Get Request - all memes
 
-
-http://iothost.xyz/meme/all                                          
+<pre>
+<a href="http://iothost.xyz/meme/all">http://iothost.xyz/meme/all</a>
+</pre>
 
 
 #### 2. Country Name
