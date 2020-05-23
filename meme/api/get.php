@@ -1,11 +1,13 @@
 <?php
 header("Content-Type:application/json");
+if ($_SERVER['REQUEST_METHOD'] === 'GET'){
 
 if (isset($_GET['all']))
 {
     run_query(
             "UPDATE `meme` SET `meme_rCount` = `meme_rCount` + 1  WHERE 1;",
-            "SELECT * FROM `meme`;"
+            "SELECT * FROM `meme`;",
+            "No meme found"
         );
 }
 else if (isset($_GET['id']))
@@ -13,7 +15,8 @@ else if (isset($_GET['id']))
     $id=$_GET['id'];
     run_query(
             "UPDATE `meme` SET `meme_rCount` = `meme_rCount` + 1  WHERE `meme_id`=$id;",
-            "SELECT * FROM `meme` WHERE `meme_id` = '$id';"
+            "SELECT * FROM `meme` WHERE `meme_id` = '$id';",
+            "Invalid meme id"
         );
 }
 else if (isset($_GET['page']))
@@ -21,18 +24,27 @@ else if (isset($_GET['page']))
     $page=$_GET['page'];
     run_query(
             "UPDATE `meme` SET `meme_rCount` = `meme_rCount` + 1  WHERE `meme_page`=$page;",
-            "SELECT * FROM `meme` WHERE `meme_page` = $page;"
+            "SELECT * FROM `meme` WHERE `meme_page` = $page;",
+            "No page found"
         );
 }
 else if (isset($_GET['popular'])) 
 {
     run_query(
         "UPDATE `meme` SET `meme_rCount` = `meme_rCount` + 1  WHERE `meme_rCount` = (SELECT max(`meme_rCount`) FROM `meme`);",
-        "SELECT * FROM `meme` ORDER BY `meme_rCount` DESC LIMIT 1;"
+        "SELECT * FROM `meme` ORDER BY `meme_rCount` DESC LIMIT 1;",
+        "No popular meme found"
     );    
 }
 
-function run_query($increment_query, $select_query){
+}else{
+    header("HTTP/1.1 400 Bad Request");
+        $response["success"] = "false";
+        $response["error message"] = "Wrong request type!";
+        echo json_encode($response, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT); //final json response encoding
+}
+
+function run_query($increment_query, $select_query, $err_msg){
     include('../include/db.php');
 
     $result = mysqli_query($con, $select_query); //first query to check existance
@@ -70,6 +82,7 @@ function run_query($increment_query, $select_query){
         //fail
         header("HTTP/1.1 400 Bad Request");
         $response["success"] = "false";
+        $response["error_message"] = $err_msg;
         echo json_encode($response, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT); 
     }
 }

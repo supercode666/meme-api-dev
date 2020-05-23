@@ -60,6 +60,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $response["error message"] = "No input found!";
         echo json_encode($response, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT); //final json response encoding
     }
+}else{
+    header("HTTP/1.1 400 Bad Request");
+        $response["success"] = "false";
+        $response["error message"] = "Wrong request type!";
+        echo json_encode($response, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT); //final json response encoding
 }
     
     
