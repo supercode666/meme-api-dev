@@ -7,7 +7,10 @@
 
 ## Usage
 #### Reload a new set of memes from http://interview.funplay8.com/index.php and store into db.
-* Do not perform if do not want to truncate the db
+
+```diff
+- Do not perform if do not want to truncate the db
+```
 <pre>
 <a href="http://iothost.xyz/meme/action/load_memes.php">http://iothost.xyz/meme/action/load_memes.php</a>
 </pre>
