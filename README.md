@@ -1,10 +1,11 @@
 # meme-api-dev
 ## Quick Info
 
-* each REST API request has a Bad Request handler to handle invalid request
+* each REST API request has a **Bad Request(400)** handler to handle invalid request with error message for user to understand the situation :
 ```JSON
 {
-    "success": "false"
+    "success": "false",
+    "error message": "Wrong request type!"
 }
 ```
 * **Assumptions** : assuming there will be no new update on http://interview.funplay8.com/index.php therefore no checking is done here
@@ -80,7 +81,7 @@
 #### Results for Posts Requests
 
 * View the results here : http://iothost.xyz/meme/index.php?page=95 
-* The design is just a mock up for testing and presenting purposes.
+* The design is just a mock up for testing and presenting purposes but it will still load up your new memes, enjoy.
 
 ---
 ## Attention
