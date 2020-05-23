@@ -1,7 +1,12 @@
 # meme-api-dev
 ## Quick Info
 
-* each REST API request has Bad Request handler
+* each REST API request has a Bad Request handler to handle invalid request
+```JSON
+{
+    "success": "false"
+}
+```
 * **Assumptions** : assuming there will be no new update on http://interview.funplay8.com/index.php therefore no checking is done here
 	- if there were updates, CRON JOBS could have been implemented here
 
