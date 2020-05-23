@@ -6,14 +6,15 @@
 ---
 
 ## Usage
-#### Reload a new set of memes from http://interview.funplay8.com/index.php and store into db.
+### Reload a new set of memes from http://interview.funplay8.com/index.php and store into db.
+<pre>
+<a href="http://iothost.xyz/meme/action/load_memes.php">http://iothost.xyz/meme/action/load_memes.php</a>
+</pre>
 
 ```diff
 - Do not perform if do not want to truncate the db
 ```
-<pre>
-<a href="http://iothost.xyz/meme/action/load_memes.php">http://iothost.xyz/meme/action/load_memes.php</a>
-</pre>
+
 
 
 ### REST API
@@ -68,5 +69,10 @@
 <pre>
 <a href="http://iothost.xyz/meme/create">http://iothost.xyz/meme/create</a>
 </pre>
+
+#### Results for Posts Requests
+
+* View the results here : http://iothost.xyz/meme/index.php?page=95 
+* The design is just a mock up for testing and presenting purposes.
 
 
