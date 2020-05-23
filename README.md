@@ -1,6 +1,19 @@
 # meme-api-dev
+## Attention
 
-### Usage
+* **/meme/extra/meme.sql** is just a reference for db checking
+
+---
+
+## Usage
+#### Reload a new set of memes from http://interview.funplay8.com/index.php and store into db.
+* Do not perform if do not want to truncate the db
+<pre>
+<a href="http://iothost.xyz/meme/action/load_memes.php">http://iothost.xyz/meme/action/load_memes.php</a>
+</pre>
+
+
+### REST API
 #### 1. Get Request - all memes
 
 <pre>
