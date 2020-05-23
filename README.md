@@ -33,3 +33,18 @@
 <pre>
 <a href="http://iothost.xyz/meme/create">http://iothost.xyz/meme/create</a>
 </pre>
+
+##### Example JSON data input format :
+```JSON
+ {
+	    "data":
+	    [
+	        {
+	            "name" : "mr bean",
+	            "url" : "https://i.pinimg.com/236x/b5/aa/1b/b5aa1be3319ea5ed7eeb04498f7b37b3.jpg"
+	        }
+	       
+	    ]
+}
+
+```
