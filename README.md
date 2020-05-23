@@ -2,7 +2,7 @@
 ## Quick Info
 
 * each REST API request has Bad Request handler
-* Assumptions : there will be no new update on http://interview.funplay8.com/index.php therefore no checking is done here
+* **Assumptions** : assuming there will be no new update on http://interview.funplay8.com/index.php therefore no checking is done here
 	- if there were updates, CRON JOBS could have been implemented here
 
 ---
