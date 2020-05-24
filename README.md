@@ -35,7 +35,7 @@
 #### 2. Get Request - memes by id
 
 <pre>
-<a href="http://iothost.xyz/id/1">http://iothost.xyz/id/1</a>
+<a href="http://iothost.xyz/meme/id/1">http://iothost.xyz/meme/id/1</a>
 </pre>
 
 #### 3. Get Request - memes by page
