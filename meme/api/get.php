@@ -1,5 +1,7 @@
 <?php
 header("Content-Type:application/json");
+include('../include/db.php');
+
 if ($_SERVER['REQUEST_METHOD'] === 'GET'){
 
 if (isset($_GET['all']))
@@ -30,8 +32,10 @@ else if (isset($_GET['page']))
 }
 else if (isset($_GET['popular'])) 
 {
+    $row_max = mysqli_fetch_array(mysqli_query($con, "SELECT max(`meme_rCount`) FROM `meme`;"));
+    $max = $row_max['max(`meme_rCount`)'];
     run_query(
-        "UPDATE `meme` SET `meme_rCount` = `meme_rCount` + 1  WHERE `meme_rCount` = (SELECT max(`meme_rCount`) FROM `meme`);",
+        "UPDATE `meme` SET `meme_rCount` = `meme_rCount` + 1  WHERE `meme_rCount` = $max;",
         "SELECT * FROM `meme` ORDER BY `meme_rCount` DESC LIMIT 1;",
         "No popular meme found"
     );    
